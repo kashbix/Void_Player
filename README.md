@@ -70,13 +70,13 @@ pip install -r requirements.txt
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/void-player.git
+git clone https://github.com/kashbix/void-player.git
 cd void-player
 
 ```
 
 2. **Prepare the Music Directory:**
-By default, the player scans for media in `/home/kash/Music`. Ensure your FLAC, WAV, or MP3 files are placed in this directory, or update `configs.MUSIC_DIR` to point to your desired path.
+By default, the player scans for media in `/home/$USER/Music`. Ensure your FLAC, WAV, or MP3 files are placed in this directory, or update `configs.MUSIC_DIR` to point to your desired path.
 3. **Configure Fonts (Optional):**
 The UI uses `DejaVuSans-Bold.ttf` for crisp rendering. If this font is not available on your system, the `configs.py` file will automatically fall back to the default Pillow font.
 4. **Run the Application:**

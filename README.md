@@ -16,6 +16,12 @@ At its core, Void Player utilizes a decoupled, non-blocking state-machine archit
 * **Headless Network & Power Management:** Includes a full physical power menu for safe reboots/shutdowns. The web dashboard also features a secure Wi-Fi configuration portal, allowing you to move the Pi to new networks without ever opening an SSH terminal.
 * **VLC-Powered Playback Engine:** Supports FLAC, WAV, and MP3 formats with dynamic ID3 tag extraction via `tinytag`. Includes an isolated background thread for seamlessly wrapping long track titles and rendering playback states smoothly.
 
+## Pictures
+* **The Web Dashboard**: ![atl](pics/overview.png) *there are only 2 songs currently in the library cuz i was beta testing it. if the user plays more than 2 songs the statics dashboard will look better*
+* **The file Transfer**: ![atl](pics/fileshare.png) *just drap and drop*
+* **About Section**: ![atl](pics/about.png) *the about section*
+
+
 ## Hardware Requirements
 
 * **SBC:** Raspberry Pi (Zero 2 W, 3, or 4 recommended for optimal VLC and PipeWire performance)

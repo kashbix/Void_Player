@@ -17,7 +17,7 @@ At its core, Void Player utilizes a decoupled, non-blocking state-machine archit
 * **VLC-Powered Playback Engine:** Supports FLAC, WAV, and MP3 formats with dynamic ID3 tag extraction via `tinytag`. Includes an isolated background thread for seamlessly wrapping long track titles and rendering playback states smoothly.
 
 ## Pictures
-* **The Web Dashboard**: ![atl](pics/overview.png) *there are only 2 songs currently in the library cuz i was beta testing it. if the user plays more than 2 songs the statics dashboard will look better*
+* **The Web Dashboard**: ![atl](pics/Screenshot From 2026-03-22 22-09-51.png)
 * **The file Transfer**: ![atl](pics/fileshare.png) *just drap and drop*
 * **About Section**: ![atl](pics/about.png) *the about section*
 

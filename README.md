@@ -9,33 +9,33 @@ At its core, Void Player utilizes a decoupled, non-blocking state-machine archit
 
 ## Core Features
 
-  * **Local Web Dashboard & Hardware Sync:** A built-in FastAPI web server provides a sleek, bento-box style interface to control the physical hardware over your local network. Adjust boot volume, auto-play behavior, and OLED sleep timers, with changes syncing instantly to the hardware via internal JSON pipelines.
-  * **Granular Telemetry Engine:** A lightweight SQLite database tracks your top tracks, artists, genres, and listening habits locally. It calculates exactly how long you listen to a track versus skipping it. No cloud tracking, no subscriptions.
-  * **Decoupled State-Machine Architecture:** Uses a centralized event queue and an active button manager (`btn_mgr`) to safely bind and unbind GPIO interrupts across different menu states.
-  * **OLED Burn-In Protection:** Features a configurable sleep timer that actively monitors playback states. The screen gracefully blacks out when idle and features "Wake on Interaction" logic to prevent accidental skips when waking the display.
-  * **Headless Network & Power Management:** Includes a full physical power menu for safe reboots/shutdowns. The web dashboard also features a secure Wi-Fi configuration portal, allowing you to move the Pi to new networks without ever opening an SSH terminal.
-  * **VLC-Powered Playback Engine:** Supports FLAC, WAV, and MP3 formats with dynamic ID3 tag extraction via `tinytag`. Includes an isolated background thread for seamlessly wrapping long track titles and rendering playback states smoothly.
+* **Local Web Dashboard & Hardware Sync:** A built-in FastAPI web server provides a sleek, bento-box style interface to control the physical hardware over your local network. Adjust boot volume, auto-play behavior, and OLED sleep timers, with changes syncing instantly to the hardware via internal JSON pipelines.
+* **Granular Telemetry Engine:** A lightweight SQLite database tracks your top tracks, artists, genres, and listening habits locally. It calculates exactly how long you listen to a track versus skipping it. No cloud tracking, no subscriptions.
+* **Decoupled State-Machine Architecture:** Uses a centralized event queue and an active button manager (`btn_mgr`) to safely bind and unbind GPIO interrupts across different menu states.
+* **OLED Burn-In Protection:** Features a configurable sleep timer that actively monitors playback states. The screen gracefully blacks out when idle and features "Wake on Interaction" logic to prevent accidental skips when waking the display.
+* **Headless Network & Power Management:** Includes a full physical power menu for safe reboots/shutdowns. The web dashboard also features a secure Wi-Fi configuration portal, allowing you to move the Pi to new networks without ever opening an SSH terminal.
+* **VLC-Powered Playback Engine:** Supports FLAC, WAV, and MP3 formats with dynamic ID3 tag extraction via `tinytag`. Includes an isolated background thread for seamlessly wrapping long track titles and rendering playback states smoothly.
 
 ## Gallery
 
 ### Software Interface
 
-  * **The Web Dashboard**:  ![atl](pics/Screenshot%20From%202026-03-22%2022-09-51.png) ![atl](pics/Screenshot%20From%202026-03-22%2022-54-50.png)
-  * **File Transfer**: Drag-and-drop your audio files directly to the Pi's local storage. ![atl](pics/fileshare.png)  
-  * **Device Management**: Restart, reboot, configure network settings, and update player preferences. ![atl](pics/about.png) 
+* **The Web Dashboard**:  ![atl](pics/Screenshot%20From%202026-03-22%2022-09-51.png) ![atl](pics/Screenshot%20From%202026-03-22%2022-54-50.png)
+* **File Transfer**: Drag-and-drop your audio files directly to the Pi's local storage. ![atl](pics/fileshare.png)  
+* **Device Management**: Restart, reboot, configure network settings, and update player preferences. ![atl](pics/about.png)
 
 ### Hardware Prototype
 
-  * **Current Setup**: Currently running on a breadboard. Future plans include a custom PCB and a 3D-printed enclosure. ![atl](pics/pic1.jpeg)
-  * **Main Menu**: The physical `luma.oled` interface.  ![atl](pics/pic3.jpeg)
-  * **Now Playing**: Features smooth scrolling text for long track names so nothing is cut off.  ![atl](pics/pic2.jpeg)
+* **Current Setup**: Currently running on a breadboard. Future plans include a custom PCB and a 3D-printed enclosure. ![atl](pics/pic1.jpeg)
+* **Main Menu**: The physical `luma.oled` interface.  ![atl](pics/pic3.jpeg)
+* **Now Playing**: Features smooth scrolling text for long track names so nothing is cut off.  ![atl](pics/pic2.jpeg)
 
 ## Hardware Requirements
 
-  * **SBC:** Raspberry Pi (Zero 2 W, 3, or 4 recommended for optimal VLC and PipeWire performance)
-  * **Display:** 128x64 I2C OLED Display (e.g., SSD1306)
-  * **Input:** 6x Tactile Push Buttons
-  * **Audio Output:** USB DAC (recommended for high-fidelity output) or a paired Bluetooth device.
+* **SBC:** Raspberry Pi (Zero 2 W, 3, or 4 recommended for optimal VLC and PipeWire performance)
+* **Display:** 128x64 I2C OLED Display (e.g., SSD1306)
+* **Input:** 6x Tactile Push Buttons
+* **Audio Output:** USB DAC (recommended for high-fidelity output) or a paired Bluetooth device.
 
 ## Hardware Setup & Wiring
 
@@ -43,21 +43,21 @@ Void Player relies on the Raspberry Pi's internal pull-up resistors. Each tactil
 
 ### GPIO Button Configuration
 
-  * **Menu / Back:** GPIO 24
-  * **Center / Select:** GPIO 18
-  * **Next Track / Down:** GPIO 22
-  * **Previous Track / Up:** GPIO 27
-  * **Volume Up:** GPIO 17
-  * **Volume Down:** GPIO 23
+* **Menu / Back:** GPIO 24
+* **Center / Select:** GPIO 18
+* **Next Track / Down:** GPIO 22
+* **Previous Track / Up:** GPIO 27
+* **Volume Up:** GPIO 17
+* **Volume Down:** GPIO 23
 
 ### OLED Display (I2C)
 
 The SSD1306 display connects via the standard hardware I2C pins:
 
-  * **VCC:** 3.3V (Pin 1)
-  * **GND:** Ground (Pin 6 or Pin 9)
-  * **SDA:** GPIO 2 (Pin 3)
-  * **SCL:** GPIO 3 (Pin 5)
+* **VCC:** 3.3V (Pin 1)
+* **GND:** Ground (Pin 6 or Pin 9)
+* **SDA:** GPIO 2 (Pin 3)
+* **SCL:** GPIO 3 (Pin 5)
 
 ## Installation & Deployment
 
@@ -68,7 +68,8 @@ sudo apt-get update
 sudo apt-get install vlc pulseaudio-utils pulseaudio-module-bluetooth bluez
 ```
 
-**2. Clone the Repository** 
+**2. Clone the Repository**
+
 ```bash
 git clone https://github.com/kashbix/void-player.git
 cd void-player
@@ -76,6 +77,7 @@ cd void-player
 ````
 
 **3. Setup Python Environment** Create a virtual environment and install the required Python libraries:
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -97,6 +99,11 @@ Navigate to `http://<YOUR_PI_IP>:8000` on any device connected to the same local
 > **Note:** If you don't know your Raspberry Pi's IP address, you can find it by checking your router's admin dashboard (under Network \> DHCP Server \> Client List), looking at the physical OLED screen via the "File Share" menu, or by running `hostname -I` directly on the Pi using a monitor.
 
 *Deployment Note: For a true headless appliance experience, it is highly recommended to configure your script to run as a `systemd` background service on boot.*
+
+## PCB manufacturing
+
+If you'd like to export the board manually from the KiCad project, you can follow the written guide for your overseas manufacturer of choice. In hardware/Void_Player/GRBRs/single.zip, there is a
+pre-generated JLCPCB-compliant .zip file ready to be uploaded at [jlcpcb.com](https://cart.jlcpcb.com/quote?stencilLayer=2&stencilWidth=100&stencilLength=100&stencilCounts=5&plateType=1&spm=Jlcpcb.Homepage.1010)
 
 ## License
 
